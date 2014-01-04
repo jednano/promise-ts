@@ -1,0 +1,38 @@
+{
+  "name": "promise-ts",
+  "version": "0.1.0",
+  "description": "TypeScript promises for Node.js.",
+  "main": "./lib/promise.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jedmao/promise-ts.git"
+  },
+  "keywords": [
+    "promise",
+    "promises",
+    "deferred",
+    "jquery",
+    "typescript"
+  ],
+  "author": "Jed Mao <jed.hunsaker+npm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jedmao/promise-ts/issues"
+  },
+  "homepage": "https://github.com/jedmao/promise-ts",
+  "devDependencies": {
+    "bower": "~1.2.8",
+    "chai": "~1.8.1",
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-test": "~0.8.1",
+    "grunt-typescript": "~0.2.7",
+    "mocha": "~1.16.2",
+    "sinon": "~1.7.3",
+    "sinon-chai": "~2.4.0"
+  }
+}

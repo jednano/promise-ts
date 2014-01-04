@@ -1,0 +1,6 @@
+.*
+*.json
+*.njsproj
+install
+lib/promise.d.ts
+test/
