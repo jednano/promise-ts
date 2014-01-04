@@ -1,0 +1,31 @@
+{
+  "name": "promise-ts",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jedmao/promise-ts",
+  "authors": [
+    "Jed Mao <jed.hunsaker+npm@gmail.com>"
+  ],
+  "description": "TypeScript promises for Node.js.",
+  "main": "lib/promise.js",
+  "keywords": [
+    "promise",
+    "promises",
+    "deferred",
+    "jquery",
+    "typescript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "dt-mocha": "~1.9.0",
+    "dt-node": "https://github.com/jedmao/dt-node.git",
+    "dt-sinon": "~1.5.0",
+    "dt-sinon-chai": "~2.4.0"
+  }
+}

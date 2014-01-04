@@ -1,0 +1,6 @@
+.*
+*.js
+*.json
+*.njsproj
+install
+test/
