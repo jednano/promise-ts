@@ -29,6 +29,8 @@ this, but I didn't have the need to go down that road myself.
 
 ## Example Usage
 
+### TypeScript
+
 ```ts
 ///<reference path='node_modules/promise-ts/promise.d.ts'/>
 import promise = require('promise-ts');
@@ -45,6 +47,27 @@ function doSomethingAsync(): promise.Promise {
 }
 
 doSomethingAsync.done(result => {
+    // result === 'foo';
+});
+```
+
+### JavaScript
+
+```js
+var promise = require('promise-ts');
+var Deferred = promise.Deferred;
+var when = promise.when; // not used in this example, but handy.
+
+function doSomethingAsync() {
+    var d = new Deferred();
+    setTimeout(function() {
+        // time consuming operations
+        d.resolve('foo');
+    });
+    return d.promise;
+}
+
+doSomethingAsync.done(function(result) {
     // result === 'foo';
 });
 ```
