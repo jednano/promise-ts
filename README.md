@@ -76,6 +76,11 @@ See [the specs][] for more examples. The library and specs have both been writte
 to satisfy the jQuery usages.
 
 
+## License
+
+MIT © [Jed Mao](https://github.com/jedmao)
+
+
 [Build Status]: https://travis-ci.org/jedmao/promise-ts.png?branch=master
 [Dependency Status]: https://gemnasium.com/jedmao/promise-ts.png
 [NPM Version]: https://badge.fury.io/js/promise-ts.png
