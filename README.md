@@ -88,3 +88,7 @@ MIT © [Jed Mao](https://github.com/jedmao)
 [jQuery documentation]: http://api.jquery.com/category/deferred-object/
 [jQuery's deferred.done]: http://api.jquery.com/deferred.done/
 [the specs]: blob/master/test/lib/promises.ts
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jedmao/promise-ts/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
