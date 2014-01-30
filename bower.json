@@ -23,7 +23,7 @@
     "tests"
   ],
   "dependencies": {
-    "dt-node": "https://github.com/jedmao/dt-node.git"
+    "dt-node": "*"
   },
   "devDependencies": {
     "dt-mocha": "~1.9.0",

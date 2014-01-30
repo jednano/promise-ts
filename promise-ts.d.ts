@@ -40,7 +40,7 @@
 		public rejected: boolean;
 	}
 
-	export interface IWhen {
+	interface IWhen {
 		(deferred: Deferred): Promise;
 		(promise: Promise): Promise;
 		(object: any): Promise;

@@ -1,4 +1,7 @@
-﻿export class Deferred {
+﻿import Promise = require('./Promise');
+
+
+class Deferred {
 
 	private doneCallbacks: Function[] = [];
 	private failCallbacks: Function[] = [];
@@ -152,72 +155,4 @@
 
 }
 
-export class Promise {
-
-	constructor(private deferred: Deferred) {
-	}
-
-	then(doneFilter: Function, failFilter?: Function, progressFilter?: Function): Promise {
-		return this.deferred.then(doneFilter, failFilter, progressFilter).promise;
-	}
-
-	done(...callbacks: Function[]): Promise {
-		return (<Deferred>this.deferred.done.apply(this.deferred, callbacks)).promise;
-	}
-
-	fail(...callbacks: Function[]): Promise {
-		return (<Deferred>this.deferred.fail.apply(this.deferred, callbacks)).promise;
-	}
-
-	always(...callbacks: Function[]): Promise {
-		return (<Deferred>this.deferred.always.apply(this.deferred, callbacks)).promise;
-	}
-
-	get resolved(): boolean {
-		return this.deferred.resolved;
-	}
-
-	get rejected(): boolean {
-		return this.deferred.rejected;
-	}
-
-}
-
-export interface IWhen {
-	(deferred: Deferred): Promise;
-	(promise: Promise): Promise;
-	(object: any): Promise;
-	(...args: Deferred[]): Promise;
-}
-
-export var when: IWhen = (...args: any[]): Promise => {
-	if (args.length === 1) {
-		var arg = args[0];
-		if (arg instanceof Deferred) {
-			return (<Deferred>arg).promise;
-		}
-		if (arg instanceof Promise) {
-			return arg;
-		}
-	}
-	var done = new Deferred();
-	if (args.length === 1) {
-		done.resolve(args[0]);
-		return done.promise;
-	}
-	var pending = args.length;
-	var results = [];
-	var onDone = (...resultArgs: any[]) => {
-		results.push(resultArgs);
-		if (--pending === 0) {
-			done.resolve.apply(done, results);
-		}
-	};
-	var onFail = () => {
-		done.reject();
-	};
-	args.forEach(a => {
-		(<Deferred>a).then(onDone, onFail);
-	});
-	return done.promise;
-};
+export = Deferred;

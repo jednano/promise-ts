@@ -1,16 +1,14 @@
 ﻿import sinon = require('sinon');
 import sinonChai = require('../sinon-chai');
 var expect = sinonChai.expect;
-import promise = require('../../lib/promise');
+import api = require('../../lib/api');
+var Deferred = api.Deferred;
 
-
-var Deferred = promise.Deferred;
-var when = promise.when;
 
 //ReSharper disable WrongExpressionStatement
 describe('Deferred Object', () => {
 
-	var d: promise.Deferred;
+	var d;
 	var d1: number;
 	var d2: number;
 	var handlers = [() => { d1 = 1; }, () => { d2 = 2; }];
@@ -180,53 +178,6 @@ describe('Deferred Object', () => {
 			d.reject();
 			expect(d1).to.equal(1);
 			expect(d2).to.equal(2);
-		});
-
-	});
-
-});
-
-describe('when function', () => {
-
-	describe('single Object passed-in', () => {
-
-		it('if Deferred, its Promise object is returned', () => {
-			var d = new Deferred();
-			expect(d.promise).to.equal(when(d));
-		});
-
-		it('if non-Deferred, non-Promise, doneCallbacks are executed immediately', done => {
-			when('foo').done(r1 => {
-				expect(r1).to.equal('foo');
-				done();
-			});
-		});
-
-	});
-
-	describe('multiple-Deferreds passed-in', () => {
-
-		var d1: promise.Deferred;
-		var d2: promise.Deferred;
-		beforeEach(() => {
-			d1 = new Deferred();
-			d2 = new Deferred();
-		});
-
-		it('resolves master Deferred when all Deferreds resolve', done => {
-			when(d1, d2).done(() => {
-				done();
-			});
-			d1.resolve();
-			d2.resolve();
-		});
-
-		it('failCallbacks are immediately fired if one Deferred is rejected', done => {
-			when(d1, d2).fail(() => {
-				done();
-			});
-			d1.resolve();
-			d2.reject();
 		});
 
 	});

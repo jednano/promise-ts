@@ -4,7 +4,6 @@
 [![Dependency Status][]](https://gemnasium.com/jedmao/promise-ts)
 [![NPM version][]](http://badge.fury.io/js/promise-ts)
 [![Views][]](https://sourcegraph.com/github.com/jedmao/promise-ts)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 [![NPM](https://nodei.co/npm/promise-ts.png?downloads=true)](https://nodei.co/npm/promise-ts/)
 
@@ -32,7 +31,7 @@ this, but I didn't have the need to go down that road myself.
 ### TypeScript
 
 ```ts
-///<reference path='node_modules/promise-ts/promise.d.ts'/>
+///<reference path='node_modules/promise-ts/promise-ts.d.ts'/>
 import promise = require('promise-ts');
 var Deferred = promise.Deferred;
 var when = promise.when; // not used in this example, but handy.

@@ -1,6 +1,6 @@
 .*
 *.json
 *.njsproj
+Gulpfile.js
 install
-lib/promise.d.ts
 test/

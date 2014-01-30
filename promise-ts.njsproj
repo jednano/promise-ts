@@ -18,22 +18,22 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
-    <Content Include=".bowerrc" />
     <Content Include=".editorconfig" />
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
     <Content Include=".npmignore" />
     <Content Include=".travis.yml" />
     <Content Include="bower.json" />
-    <Content Include="lib\promise.d.ts" />
-    <Content Include="lib\promise.ts" />
-    <Content Include="LICENSE" />
-    <Content Include="install" />
+    <Content Include="lib\api.ts" />
+    <Content Include="lib\IWhen.ts" />
+    <Content Include="lib\Promise.ts" />
+    <Content Include="lib\when.ts" />
     <Content Include="package.json" />
-    <Content Include="promise.d.ts" />
     <Content Include="CHANGELOG.md" />
+    <Content Include="promise-ts.d.ts" />
     <Content Include="README.md" />
-    <Content Include="test\lib\promise.ts" />
+    <Content Include="test\lib\Deferred.ts" />
+    <Content Include="test\lib\when.ts" />
     <Content Include="test\sinon-chai.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -42,8 +42,9 @@
     <Folder Include="test\lib\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gruntfile.js" />
-    <Compile Include="lib\promise.js" />
+    <Compile Include="Gulpfile.js" />
+    <Compile Include="lib\api.js" />
+    <Compile Include="lib\Deferred.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
