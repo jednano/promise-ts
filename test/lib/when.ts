@@ -1,8 +1,7 @@
 ﻿import sinonChai = require('../sinon-chai');
 var expect = sinonChai.expect;
-import api = require('../../lib/api');
-var Deferred = api.Deferred;
-var when = api.when;
+import Deferred = require('../../lib/Deferred');
+import when = require('../../lib/when');
 
 
 //ReSharper disable WrongExpressionStatement
