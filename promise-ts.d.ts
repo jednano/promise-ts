@@ -1,4 +1,8 @@
 ﻿declare module "promise-ts" {
+	export = PromiseTs;
+}
+
+declare module PromiseTs {
 
 	export class Deferred {
 		private doneCallbacks;
@@ -40,12 +44,12 @@
 		public rejected: boolean;
 	}
 
-	interface IWhen {
-		(deferred: Deferred): Promise;
-		(promise: Promise): Promise;
-		(object: any): Promise;
-		(...args: Deferred[]): Promise;
-	}
-
 	export var when: IWhen;
+}
+
+interface IWhen {
+	(deferred: PromiseTs.Deferred): PromiseTs.Promise;
+	(promise: PromiseTs.Promise): PromiseTs.Promise;
+	(object: any): PromiseTs.Promise;
+	(...args: PromiseTs.Deferred[]): PromiseTs.Promise;
 }
